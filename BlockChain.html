@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 12px; line-height: 22px; word-wrap: break-word; } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } img { max-width: 100%; max-height: 100%; } a { color: #4080D0; text-decoration: none; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } a:hover { color: #4080D0; text-decoration: underline; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left: 5px solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ .vscode-light { color: rgb(30, 30, 30); } .vscode-dark { color: #DDD; } .vscode-high-contrast { color: white; } .vscode-light code { color: #A31515; } .vscode-dark code { color: #D7BA7D; } .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } .vscode-light blockquote, .vscode-dark blockquote { background: rgba(127, 127, 127, 0.1); border-color: rgba(0, 122, 204, 0.5); } .vscode-high-contrast blockquote { background: transparent; border-color: #fff; }
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-left: 40px; } .task-list-item { list-style-type: none; } .task-list-item-checkbox { vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="blockchain%E6%8E%A2%E7%A9%B6">BlockChain探究</h1>
+<h2 id="blockchain%E6%A6%82%E5%BF%B5">BlockChain概念</h2>
+<ol>
+<li>定义：去中心化的分布式账本数据库</li>
+<li>Block概念: 一次交易记录，具有时间戳</li>
+<li>BlockChain： Block按照时间线性排列组成一条时间不可逆的交易记录链条</li>
+</ol>
+<h2 id="blockchain%E7%89%B9%E7%82%B9">BlockChain特点</h2>
+<ol>
+<li>去中心化，每个参与其中的个体都是一个中心，降低信任成本，交易更高效</li>
+<li>公开化，每个人都有相同信息的记录账本</li>
+<li>交易不可逆、不易被篡改、数据加密</li>
+</ol>
+<h2 id="blockchain%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB">Blockchain简单分类</h2>
+<ol>
+<li>私有链</li>
+<li>公有链</li>
+<li>联盟链</li>
+</ol>
+<h2 id="hyperledger-fabric">HyperLedger fabric</h2>
+<h3 id="hyperledger-fabric%E7%89%B9%E7%82%B9">HyperLedger fabric特点</h3>
+<ol>
+<li>
+<p>属于联盟链或私有链，需要知道成员的身份信息</p>
+<ol>
+<li>分布式逻辑处理和协商（“链代码”）</li>
+<li>交易订购</li>
+<li>交易验证和提交</li>
+</ol>
+</li>
+<li>
+<p>交易流过程</p>
+<p><img src="file:///d%3A/my_github/BlockChain/deal_flow.png" alt="Flow"></p>
+</li>
+<li>
+<p>信息并不是完全公开，当对方需要知道这部分信息才能做交易时才会传递这些信息</p>
+</li>
+</ol>
+<h3 id="fabric%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85">fabric环境安装</h3>
+<ol>
+<li>
+<p>go安装</p>
+<pre class="hljs"><code><div>wget https://storage.googleapis.com/golang/go1.8.4.linux-amd64.tar.gz
+tar -C /usr/<span class="hljs-built_in">local</span> -xzf go1.8.4.linux-amd64.tar.gz
+<span class="hljs-built_in">echo</span> <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/usr/<span class="hljs-built_in">local</span>/go/bin &gt;&gt; /etc/profile
+<span class="hljs-built_in">echo</span> <span class="hljs-built_in">export</span> GOROOT=/usr/<span class="hljs-built_in">local</span>/go &gt;&gt; /etc/profile
+<span class="hljs-built_in">echo</span> <span class="hljs-built_in">export</span> GOPATH=/home/work/go &gt;&gt; /etc/profile
+<span class="hljs-built_in">echo</span> <span class="hljs-built_in">export</span> PATH=<span class="hljs-variable">$PATH</span>:/home/work/go/bin &gt;&gt; /etc/profile
+<span class="hljs-built_in">source</span> /etc/profile
+</div></code></pre>
+</li>
+<li>
+<p>docker安装</p>
+<pre class="hljs"><code><div>curl <span class="hljs-_">-s</span>Sl https://get.docker.com/ | sh
+service docker start
+<span class="hljs-comment"># 安装docker-compose</span>
+apt-get install python-pip
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.12.0/docker-compose-`uname <span class="hljs-_">-s</span>`-`uname -m` &gt; ~/docker-compose
+mv ~/docker-compose /usr/<span class="hljs-built_in">local</span>/bin/docker-compose
+chmod +x /usr/<span class="hljs-built_in">local</span>/bin/docker-compose
+</div></code></pre>
+</li>
+<li>
+<p>Fabric源码下载</p>
+<pre class="hljs"><code><div>go get github.com/hyperledger/fabric
+mkdir -p /home/work/go/src/github.com/hyperledger
+<span class="hljs-built_in">cd</span> /home/work/go/src/github.com/hyperledger
+git <span class="hljs-built_in">clone</span> https://github.com/hyperledger/fabric.git
+<span class="hljs-comment"># 切到1.0.0版本</span>
+<span class="hljs-built_in">cd</span> /home/work/go/src/github.com/hyperledger/fabric
+git checkout v1.0.0
+</div></code></pre>
+</li>
+<li>
+<p>Fabric镜像下载</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># 下载并执行批量下载脚本</span>
+<span class="hljs-built_in">cd</span> /home/work/go/src/github.com/hyperledger/fabric/examples/e2e_cli/
+<span class="hljs-built_in">source</span> download-dockerimages.sh -c x86_64-1.0.0 <span class="hljs-_">-f</span> x86_64-1.0.0
+<span class="hljs-comment"># 检查镜像列表</span>
+docker images
+</div></code></pre>
+</li>
+<li>
+<p>启动Fabric网络并完成ChainCode的测试</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># 编译生成Fabric公私钥、证书的程序</span>
+<span class="hljs-comment"># 基于configtx.yaml生成创世区块和通道相关信息</span>
+<span class="hljs-comment"># 基于crypto-config.yaml生成公私钥和证书信息，并保存在crypto-config文件夹中</span>
+<span class="hljs-comment"># 基于docker-compose-cli.yaml启动1Orderer+4Peer+1CLI的Fabric容器</span>
+<span class="hljs-comment"># 在CLI启动的时候，会运行scripts/script.sh文件，这个脚本文件包含了创建Channel，加入Channel，安装Example02，运行Example02等功能</span>
+bash network_setup.sh up
+
+<span class="hljs-comment"># 手动测试一下Fabric网络，查询a账户余额，余额应该为90</span>
+docker <span class="hljs-built_in">exec</span> -it cli bash
+peer chaincode query -C mychannel -n mycc -c <span class="hljs-string">'{"Args":["query","a"]}'</span>
+
+<span class="hljs-comment"># 把a账户的余额再转20元给b账户</span>
+peer chaincode invoke -o orderer.example.com:7050  --tls <span class="hljs-literal">true</span> --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem  -C mychannel -n mycc -c <span class="hljs-string">'{"Args":["invoke","a","b","20"]}'</span>
+
+<span class="hljs-comment"># 查询a账户余额，余额应该为70</span>
+docker <span class="hljs-built_in">exec</span> -it cli bash
+peer chaincode query -C mychannel -n mycc -c <span class="hljs-string">'{"Args":["query","a"]}'</span>
+</div></code></pre>
+</li>
+</ol>
+
+    </body>
+    </html>
